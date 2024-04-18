@@ -1,0 +1,16 @@
+:root{
+    --primary-color:#003476;
+    --secundary-color: #B4D2F7;
+    --header-size: 4rem;
+    --font:1.8rem;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
