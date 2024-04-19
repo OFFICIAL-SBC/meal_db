@@ -4,26 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sebas Gourmet</title>
+    <link rel="stylesheet" href="./styles/styles.css">
 </head>
 <body>
-    <h1>Magic Menu</h1>
-    <form id="myMealForm">
-        <label for="meal">
-            <span>What would you like to eat?</span>
-            <input type="text" id="meal" name="meal" placeholder="Enter a meal"/>   
-        </label>
-
-        <label for="search-options">
-            <select name="search-options" id="searchOptions">
-                <option value="meal_name">Searh by name</option>
-                <option value="main_ingrediente">Search by main ingredient</option>
-                <option value="category">Seach by category</option>
-                <option value="nationality">Seach by area</option>
-            </select>
-        </label>
-        <button type="submit">Submit</button>
-    </form>
-
-    
+    <main class="main">
+        <div class="main--bg-img"></div>
+        <section class="main--title-form">
+            <div class="main--title-section">
+                <h1>Magic Menu</h1>
+                <div class="main--line"></div>
+                <p>All you can eat at once place!!</p>
+            </div>
+            <form id="myMealForm">
+                <label for="meal">
+                    <span>What would you like to eat?</span>
+                    <input type="text" id="meal" name="meal" placeholder="Enter a meal"/>   
+                </label>
+                <button type="submit">Submit</button>
+                <label for="search-options">
+                    <select name="search-options" id="searchOptions">
+                        <option value="meal_name">Search by name</option>
+                        <option value="main_ingredient">Search by main ingredient</option>
+                        <option value="category">Search by category</option>
+                        <option value="nationality">Search by area</option>
+                    </select>
+                </label>
+            </form>
+        </section>
+    </main>    
 </body>
 </html>
