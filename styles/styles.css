@@ -4,8 +4,8 @@
     --third-color:#481E14;
     --fourth-color: #0C0C0C;
     --big-font-size:5rem;
-    --medium-font-size:3rem;
-    --small-font-size:2rem;
+    --medium-font-size:2.3rem;
+    --small-font-size:1.8rem;
     
 }
 
@@ -22,6 +22,7 @@ html{
 
 body{
     min-height: 100%;
+    font-family: "Lobster Two", sans-serif;
 }
 .main{
     width: 100%;
@@ -43,9 +44,9 @@ body{
 /* * Main section of the main page*/
 .main--title-form{
     position: absolute;
-    width: 80%;
+    width: 70%;
     height: 80%;
-    right: 10%;
+    right: 15%;
     top: 10%;
     padding: 20px;
     background-image: url('/img/backgorund-body.jpg');
@@ -83,7 +84,121 @@ p{
     font-size: var(--small-font-size);
     color: white;
 }
-form{
+.main--form-container{
+    display: flex;
     width: 45%;
     height: 100%;
+    justify-content: center;
+    align-items: center;
 }
+
+.main--form-container form{
+    display:flex;
+    width: 90%;
+    height: 80%;
+    background: rgba(255, 255, 255, 0.3);
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 3px;
+    justify-content: space-evenly;
+    padding-inline:20px;
+}
+
+
+
+.main--form-container form span{
+    display: block;
+    font-size: var(--medium-font-size);
+    font-weight: bold;
+    text-align: center;
+    color: #0b0c0a;
+    text-shadow: 3px 3px 5px rgba(0,0,0,0.6);
+}
+
+.main--form-container form span:hover{
+    color: #F2613F;
+}
+
+.main--submit-container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.main--form-container form input{
+    outline: none;
+    padding: 10px;
+    width: 85%;
+    border-radius: 20px;
+    border: 2px solid #0b0c0a;
+    font-size: 16px;
+    padding: 10px 15px;
+    background-color: transparent;
+    transition: border-color 0.3s, box-shadow 0.3s, background-color 0.3s;
+}
+
+.main--form-container form input:focus {
+    background-color: white;
+}
+
+.main--form-container form input:hover {
+    border-color: #F2613F;
+    box-shadow: 0px 0px 5px 4px rgba(11, 11, 10, 0.2);
+    background-color: white;
+}
+
+.main--form-container form input::placeholder {
+    font-family: "Lobster Two", sans-serif;
+    font-style: italic;
+    color: #0b0c0a;
+}
+
+.main--form-container form button{
+    outline: none;
+    border: 2px solid #0b0c0a;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-image: url('/icons/magnifier.png');
+    background-position:center;
+    background-repeat:no-repeat;
+    background-color: transparent;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.main--form-container form button:hover{
+    background-color: white;
+    box-shadow: 0px 0px 5px 4px rgba(11, 11, 10, 0.2);
+    border-color: #F2613F;
+}
+
+.main--select-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+select {
+    width: 80%;
+    font-family: "Lobster Two", sans-serif;
+    padding: 10px 15px;
+    border: 2px solid #0b0c0a;
+    border-radius: 5px;
+    outline: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    appearance: none;
+    text-align: center;
+    background-color: transparent;
+    background-image: none;
+    transition: all 0.5s ease;
+}
+
+select:hover {
+    background-image: linear-gradient(to left, #0b0c0a, #F2613F);
+    color: white;
+}
+
+
+

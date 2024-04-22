@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sebas Gourmet</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/styles.css">
 </head>
 <body>
@@ -11,25 +14,31 @@
         <div class="main--bg-img"></div>
         <section class="main--title-form">
             <div class="main--title-section">
-                <h1>Magic Menu</h1>
+                <h1>Ratatouille</h1>
                 <div class="main--line"></div>
                 <p>All you can eat at once place!!</p>
             </div>
-            <form id="myMealForm">
-                <label for="meal">
-                    <span>What would you like to eat?</span>
-                    <input type="text" id="meal" name="meal" placeholder="Enter a meal"/>   
-                </label>
-                <button type="submit">Submit</button>
-                <label for="search-options">
-                    <select name="search-options" id="searchOptions">
-                        <option value="meal_name">Search by name</option>
-                        <option value="main_ingredient">Search by main ingredient</option>
-                        <option value="category">Search by category</option>
-                        <option value="nationality">Search by area</option>
-                    </select>
-                </label>
-            </form>
+            <div class="main--form-container">
+                <form id="myMealForm">
+                    <label for="meal">
+                        <span>What would you like to eat?</span>
+                    </label>
+                    <div class ="main--submit-container">
+                        <input type="text" id="meal" name="meal" placeholder="Enter a meal"/>
+                        <button type="submit"></button>  
+                    </div>
+                    
+                    <label class="main--select-container" for="search-options">
+                        <select name="search-options" id="searchOptions">
+                            <option value="option">Select an option</option>   
+                            <option value="meal_name">Search by name</option>
+                            <option value="main_ingredient">Search by main ingredient</option>
+                            <option value="category">Search by category</option>
+                            <option value="nationality">Search by area</option>
+                        </select>
+                    </label>
+                </form>
+            </div>
         </section>
     </main>    
 </body>
