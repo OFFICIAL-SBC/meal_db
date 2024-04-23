@@ -1,0 +1,97 @@
+:root{
+    /**Colors*/
+    --primary-color:#F2613F;
+    --secondary-color: #9B3922;
+    --third-color:#481E14;
+    --fourth-color: #0C0C0C;
+
+    /** Fonts*/
+    --big-font-size:5rem;
+    --medium-font-size:2.3rem;
+    --small-font-size:1.8rem;
+
+    /** Cards*/
+    --card-width: 250px;
+    --card-border-radius: 16px;
+    --row-increment: 10px;
+    --card-small:24;
+    --card-medium:30;
+    --card-large:45;
+    
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+    height: 100%;
+}
+
+body{
+    min-height: 100%;
+    font-family: "Lobster Two", sans-serif;
+}
+main{
+    width: 100%;
+    min-height: 100%;
+    background-image: url('/img/backgorund-body.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+h1{
+    padding-block: 15px;
+    font-size: var(--big-font-size);
+    color: white;
+    text-align: center;
+    text-shadow: 3px 3px 3px rgba(0,0,0,0.6);
+}
+
+.main--line{
+    height: 4px;
+    width: 80%;
+    background-color: white;
+    box-shadow: 0px 0px 5px 1px #0C0C0C;
+    margin-bottom: 15px;
+}
+
+
+.main--gallery-container{
+    width: 80%;
+    height: auto;
+    background-color: #0C0C0C;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, var(--card-width));
+    grid-auto-rows: var(--row-increment);
+    justify-content: center;
+    
+}
+
+.main--gallery-item-general{
+    padding: 10px;
+    margin: 15px 10px;
+    border-radius: var(--card-border-radius);
+    background-color: var(--primary-color);
+}
+
+.main--gallery-item-large{
+    grid-row-end: span var(--card-large);
+}
+
+.main--gallery-item-medium{
+    grid-row-end: span var(--card-medium);
+}
+
+.main--gallery-item-small{
+    grid-row-end: span var(--card-small);
+}
