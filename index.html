@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="./index.js" async></script>
 </head>
 <body>
@@ -27,16 +28,16 @@
                     </label>
                     <div class ="main--submit-container">
                         <input type="text" id="meal" name="meal" placeholder="Enter a meal"/>
-                        <button type='button' class="main__submit-button"></button>  
+                        <button type='submit' class="main__submit-button"></button>  
                     </div>
                     
                     <label class="main--select-container" for="search-options">
                         <select name="search-options" id="searchOptions">
                             <option value="option">Select an option</option>   
-                            <option value="meal_name">Search by name</option>
-                            <option value="main_ingredient">Search by main ingredient</option>
-                            <option value="category">Search by category</option>
-                            <option value="nationality">Search by area</option>
+                            <option value="s">Search by name</option>
+                            <option value="i">Search by main ingredient</option>
+                            <option value="c">Search by category</option>
+                            <option value="a">Search by area</option>
                         </select>
                     </label>
                 </form>
@@ -44,16 +45,15 @@
         </section>
         <div class="pop-up-container" id="popUp">
             <figure class="pop-up-container__main-figure">
-                <img src="./img/breast_chicken.jpg" alt="">
+                <img id="img-pop-up" src="./img/breast_chicken.jpg" alt="">
                 <figcaption>
                     <h4>Lets prepare a</h4>
-                    <h3>Meal name</h3>
+                    <h3 id="title-pop-up">Meal name</h3>
                 </figcaption>
             </figure>
             <h5>Tags</h5>
             <ul class="pop-up-container__tag-list">
-                <li>Item1</li>
-                <li>Item2</li>
+
             </ul>
             <div class="pop-up-container__ingredients-container">
                 <figure>
@@ -61,17 +61,15 @@
                 </figure>
                 <div class="pop-up-container__ingredients-title-list-container">
                     <h2>Ingredients</h2>
-                    <ul>
-                        <li>Item 1</li>
-                        <li>Item 2</li>
-                        <li>Item 3</li>
+                    <ul id="ingredients-list">
+
                     </ul>
                 </div>
             </div>
             <div class="pop-up-container__preparation-container">
                 <div class="pop-up-container__preparation-title-list-container">
                     <h2>Preparation</h2>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos, tempora impedit quis optio molestiae repellendus ex tempore necessitatibus aperiam odio quo dolorum ratione sint incidunt, dolore facere aliquam consequatur? Asperiores!</p>
+                    <p id="preparation-p">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos, tempora impedit quis optio molestiae repellendus ex tempore necessitatibus aperiam odio quo dolorum ratione sint incidunt, dolore facere aliquam consequatur? Asperiores!</p>
                 </div>
                 <figure>
                     <img src="./img/pot.png" alt="">
