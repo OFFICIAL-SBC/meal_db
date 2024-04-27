@@ -1,12 +1,8 @@
 :root{
-    --primary-color:#F2613F;
-    --secondary-color: #9B3922;
-    --third-color:#481E14;
-    --fourth-color: #0C0C0C;
     --big-font-size:5rem;
     --medium-font-size:2.3rem;
     --small-font-size:1.8rem;
-    
+    --list-font-size:1.1rem;
 }
 
 *{
@@ -24,6 +20,7 @@ body{
     min-height: 100%;
     font-family: "Lobster Two", sans-serif;
 }
+
 .main{
     width: 100%;
     height: 100%;
@@ -198,6 +195,226 @@ select {
 select:hover {
     background-image: linear-gradient(to left, #0b0c0a, #F2613F);
     color: white;
+}
+
+/** Pop up container*/
+.display{
+    top: 12.5%;
+    visibility: visible;
+}
+.pop-up-container{
+    position: absolute;
+    top: -50%;
+    left: 25%;
+    width: 50vw;
+    height: 65%;
+    background-color: white;
+    border-radius: 16px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    visibility: hidden;
+}
+
+.pop-up-container::-webkit-scrollbar {
+    width: 5px;               /* width of the entire scrollbar */
+}
+
+.pop-up-container::-webkit-scrollbar-thumb {
+    background-color: #F2613F;    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+}
+
+.pop-up-container h2{
+    font-size: var(--medium-font-size);
+    text-align: center;
+    margin-top: 10px;
+}
+
+.pop-up-container h3{
+    font-size: var(--big-font-size);
+    border-bottom: 1px solid #fff;
+}
+
+
+.pop-up-container h4{
+    font-size: var(--medium-font-size);
+}
+
+
+/**Picture part*/
+.pop-up-container__main-figure{
+    position: relative;
+    width: 100%;
+    height: 50%;
+    color: #fff;
+}
+
+.pop-up-container__main-figure::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)); /* Example gradient */
+}
+
+.pop-up-container__main-figure img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+}
+
+.pop-up-container__main-figure figcaption {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 15px 20px;
+}
+
+.pop-up-container h5{
+    font-size: 2rem;
+    padding: 10px 10px 5px 10px;
+    color: #0b0c0a;
+    font-weight: bold;
+    color: #F2613F;
+}
+
+.pop-up-container ul{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 5px;
+    list-style: none;
+    font-size: var(--list-font-size);
+}
+
+.pop-up-container ul li {
+    padding: 5px 10px;
+    margin-inline:5px;
+    border-radius: 10px;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+/** Tag Part*/
+.pop-up-container .pop-up-container__tag-list{
+    padding-left: 10px;
+    margin-bottom: 10px;
+}
+
+.pop-up-container__tag-list li{
+    background-color:#F2613F;
+    color: #fff;
+}
+
+.pop-up-container__tag-list li:hover {
+    background-color: #fff;
+    color: #F2613F; 
+}
+
+/** Ingredient section*/
+.pop-up-container__ingredients-container{
+    display: flex;
+    width: 100%;
+    height: auto;
+    margin-top: 50px;
+    background-color:#F2613F;
+    color: #fff;
+}
+
+.pop-up-container__ingredients-container figure{
+    width: 35%;
+    height: 160px;
+}
+
+.pop-up-container__ingredients-container figure img{
+    position: relative;
+    top: -70px;
+    left: -95px;
+    width: 180%;
+    height: 180%;
+}
+
+.pop-up-container__ingredients-title-list-container{
+    width: 65%;
+    height: 100%;
+}
+
+.pop-up-container__ingredients-title-list-container h2{
+    text-align: left;
+    padding-left:15px ;
+}
+
+.pop-up-container__ingredients-title-list-container ul{
+    width: 100%;
+    height: auto;
+}
+
+.pop-up-container__ingredients-title-list-container ul li:hover{
+    background-color: #fff;
+    color: #F2613F;
+}
+
+/**Preparation section*/
+.pop-up-container__preparation-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.pop-up-container__preparation-container h2{
+    text-align: left;
+    padding-left:15px ;
+    color: #F2613F;
+}
+.pop-up-container__preparation-title-list-container{
+    width: 63%;
+    min-height: 160px;
+    height: 100%;
+}
+
+.pop-up-container__preparation-title-list-container p{
+    font-size: 1.1rem;
+    color: #0b0c0a;
+    padding-left:15px;
+    margin-top: 10px;
+}
+
+.pop-up-container__preparation-container figure{
+    width: 35%;
+    height: 100%;
+}
+
+.pop-up-container__preparation-container figure img{
+    position: relative;
+    top: -40px;
+    right: 30px;
+    width: 110%;
+    height: 110%;
+}
+
+/** Button section*/
+.pop-up-container__close-button{
+    position: relative;
+    left: 40%;
+    margin: 20px;
+    width: 15%;
+    height: 40px;
+    border-radius: 16px;
+    background-color: #F2613F;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    text-align:center;
+    transition: all 0.3s ease-in-out;
+}
+
+.pop-up-container__close-button:hover{
+    scale: 1.1;
+    box-shadow: 0px 0px 5px 4px rgba(11, 11, 10, 0.2);
 }
 
 
