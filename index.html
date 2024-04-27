@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/styles.css">
+    <script src="./index.js" async></script>
 </head>
 <body>
     <main class="main">
@@ -26,7 +27,7 @@
                     </label>
                     <div class ="main--submit-container">
                         <input type="text" id="meal" name="meal" placeholder="Enter a meal"/>
-                        <button type="submit"></button>  
+                        <button type='button' class="main__submit-button"></button>  
                     </div>
                     
                     <label class="main--select-container" for="search-options">
@@ -41,7 +42,7 @@
                 </form>
             </div>
         </section>
-        <div class="pop-up-container">
+        <div class="pop-up-container" id="popUp">
             <figure class="pop-up-container__main-figure">
                 <img src="./img/breast_chicken.jpg" alt="">
                 <figcaption>
@@ -76,7 +77,7 @@
                     <img src="./img/pot.png" alt="">
                 </figure>
             </div>
-            <button class="pop-up-container__close-button">Close</button>
+            <button type='button' class="pop-up-container__close-button" onclick="closePopUp()">Close</button>
         </div>
     </main>    
 </body>
