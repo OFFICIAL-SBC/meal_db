@@ -4,11 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery</title>
+    <link rel="shortcut icon" href="/icons/gallery-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/gallery.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./index.js" async></script>
 
 </head>
 <body>
@@ -26,6 +29,40 @@
                 </figcaption>
             </figure>
         </section>
+        <div class="pop-up-container" id="popUp">
+            <figure class="pop-up-container__main-figure">
+                <img id="img-pop-up" src="./img/breast_chicken.jpg" alt="">
+                <figcaption>
+                    <h4>Lets prepare a</h4>
+                    <h3 id="title-pop-up">Meal name</h3>
+                </figcaption>
+            </figure>
+            <h5>Tags</h5>
+            <ul class="pop-up-container__tag-list">
+
+            </ul>
+            <div class="pop-up-container__ingredients-container">
+                <figure>
+                    <img src="./img/bowl.png" alt="">
+                </figure>
+                <div class="pop-up-container__ingredients-title-list-container">
+                    <h2>Ingredients</h2>
+                    <ul id="ingredients-list">
+
+                    </ul>
+                </div>
+            </div>
+            <div class="pop-up-container__preparation-container">
+                <div class="pop-up-container__preparation-title-list-container">
+                    <h2>Preparation</h2>
+                    <p id="preparation-p">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos, tempora impedit quis optio molestiae repellendus ex tempore necessitatibus aperiam odio quo dolorum ratione sint incidunt, dolore facere aliquam consequatur? Asperiores!</p>
+                </div>
+                <figure>
+                    <img src="./img/pot.png" alt="">
+                </figure>
+            </div>
+            <button type='button' class="pop-up-container__close-button" onclick="closePopUp()">Close</button>
+        </div>
     </main>
 </body>
 </html>

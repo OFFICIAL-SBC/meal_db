@@ -198,6 +198,57 @@ select:hover {
     color: white;
 }
 
+
+
+/** Wrong petition*/
+
+/* POP-UP BOX FOR WHEN THINGS GO WRONG */
+.wrong-pop-up{
+    position: absolute;
+    width: 350px;
+    border-radius: 30px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: -50%;
+    left: 40%;
+    visibility: hidden;
+    transition: all 0.5s;
+}
+
+.wrong-pop-up img{
+    width: 100px;
+    margin: 50px 0 30px 0;
+}
+
+.wrong-pop-up h2{
+    color:#ff4141;
+}
+
+.wrong-pop-up p{
+    color: #666;
+}
+
+/* POP-UP BOX BUTTON */
+.wrong-pop-up button{
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    background: #ff4141;
+    margin: 30px 0;
+    padding: 10px 50px;
+    border-radius: 50px;
+    cursor: pointer;
+    border: none;
+}
+
+.wrong-pop-up.wrong-display{
+    top: 10%;
+    visibility: visible;
+}
+
 /** Pop up container*/
 .pop-up-container.display{
     top: 12.5%;
