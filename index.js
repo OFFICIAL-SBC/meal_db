@@ -1,9 +1,4 @@
-const API = "https://www.themealdb.com/api/json/v1/1";
-
-
-// TODO: Gallery part
-
-
+const API = 'https://www.themealdb.com/api/json/v1/1'
 
 // TODO: Main page Part
 const buttonSearch = document.querySelector(".main__submit-button");
@@ -66,12 +61,14 @@ function resultSearchByName(data){
   titlePopUpCard.innerText = data.meals[0].strMeal;
   imagePopUpCard.src = data.meals[0].strMealThumb;
   paraphPreparationPopUpCard.innerText = data.meals[0].strInstructions;
-  data.meals[0].strTags.split(',').forEach(element => {
-    const newTag = document.createElement("li");
-    const textTag = document.createTextNode(element);
-    newTag.appendChild(textTag);
-    tagListPopUpCard.appendChild(newTag); 
-  });
+  if(data.meals[0].strTags){
+    data.meals[0].strTags.split(',').forEach(element => {
+        const newTag = document.createElement("li");
+        const textTag = document.createTextNode(element);
+        newTag.appendChild(textTag);
+        tagListPopUpCard.appendChild(newTag); 
+    });   
+  }
 
   let listOFIngredients = Object.keys(data.meals[0]).filter(item => item.includes("strIngredient") && data.meals[0][item]);
   
@@ -83,55 +80,6 @@ function resultSearchByName(data){
   });
   displayPopUp();
 }
-
-function getRandomInt(max) {
-  return Math.floor(Math.random() * max);
-}
-
-function createsFigureTag(item){
-
-    // Create the figure element
-    let figure = document.createElement('figure');
-    figure.classList.add("main--gallery-item-general");
-
-    switch(getRandomInt(3)){
-      case 0:
-        figure.classList.add("main--gallery-item-small");
-      break;
-      case 1:
-        figure.classList.add("main--gallery-item-medium");
-      break;
-      default:
-        figure.classList.add("main--gallery-item-large");
-    }
-
-    // Create the img element
-    let img = document.createElement('img');
-    img.src = item.strMealThumb; // Set the source of the image
-  
-    // Create the figcaption element
-    let figcaption = document.createElement('figcaption');
-  
-    // Create the h3 element
-    let h3 = document.createElement('h3');
-    h3.textContent = item.strMeal; // Set the text content of h3
-  
-    figcaption.appendChild(h3);
-    figure.appendChild(img);
-    figure.appendChild(figcaption);
-
-    return figure;
-}
-
-function resultSearchByOtherCriteria(data){
-  const galleryContainer = document.querySelector('.main--gallery-container');
-  data.meals.forEach((item,index) =>{
-    if(index <= 17){
-      galleryContainer.appendChild(createsFigureTag(item));
-    }
-  });
-}
-
 
 buttonSearch.addEventListener("click", (event) => {
   event.preventDefault(); // ! Prevent the button reloads the whole page
@@ -153,8 +101,8 @@ buttonSearch.addEventListener("click", (event) => {
             if(displayableList.value === "s"){
               resultSearchByName(data);
             }else{
+              localStorage.setItem("listResponse",JSON.stringify(data.meals));
               window.location.href = "gallery.html";
-              resultSearchByOtherCriteria(data);
             }
           } else {
             insertErrorMessage("Please, type in a valid and available meal");
